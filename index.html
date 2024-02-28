@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Concert Booking</title>
+</head>
+<body>
+    <header>
+        <h1>Concert Booking</h1>
+    </header>
+
+    <section id="ticketSection">
+        <h2>Vælg Koncert</h2>
+        <select id="concertSelect">
+            <option value="concert1">Koncert 1</option>
+            <option value="concert2">Koncert 2</option>
+            <!-- Tilføj flere koncerter efter behov -->
+        </select>
+        <button onclick="loadTicketForm()">Bestil Billetter</button>
+        <div id="ticketForm"></div>
+    </section>
+
+    <section id="bookingSection">
+        <!-- Bookingformular indhold her -->
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Concert Booking</p>
+    </footer>
+
+    <script src="index.js"></script>
+</body>
+</html>

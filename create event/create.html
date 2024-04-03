@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Event</title>
+    <link rel="stylesheet" href="create.css">
+</head>
+<body>
+    <header>
+        <div id="header">
+            <a href="#" class="logo"><img src="logo.png" alt=""></a>
+            <nav>
+                <ul>
+                    <li><a href="#">Events</a></li>
+                    <li><a href="#">Opret event</a></li>
+                    <li><a href="#">Log In</a></li>
+                    <li><a href="#">Sign Up</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div class="container">
+        <h2>Opret et nyt event</h2>
+        <form action="/create-event" method="post">
+            <div>
+                <label for="eventName">Event navn:</label>
+                <input type="text" id="eventName" name="eventName" required>
+            </div>
+            <div>
+                <label for="eventDate">Dato og tidspunkt:</label>
+                <input type="datetime-local" id="eventDate" name="eventDate" required>
+            </div>
+            <div>
+                <label for="eventLocation">Sted:</label>
+                <input type="text" id="eventLocation" name="eventLocation" required>
+            </div>
+            <div>
+                <label for="eventDescription">Beskrivelse:</label>
+                <textarea id="eventDescription" name="eventDescription" rows="4" cols="50" required></textarea>
+            </div>
+            <div>
+                <button type="submit">Opret event</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

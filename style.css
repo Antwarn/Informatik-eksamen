@@ -1,59 +1,124 @@
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-}
-
-header {
-  background-color: #333;
-  padding: 50px;
-}
-
-.logo {
-  float: left;
-  margin-right: 0px;
-}
-
-.logo img {
-  height: 100px;
-}
-
-nav {
-  text-align: center;
-}
-
-nav ul {
-  list-style-type: none;
+/* Reset CSS */
+* {
   margin: 0;
   padding: 0;
-  display: inline-block;
+  box-sizing: border-box;
 }
 
-nav li {
-  display: inline;
-  margin-right: 20px;
-  padding: 5px;
+/* Global Styles */
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #f4f4f4;
+  color: #333;
+  padding: 20px;
 }
 
-nav a {
-  color: white;
+.container {
+  max-width: 960px;
+  margin: auto;
+  overflow: hidden;
+}
+
+/* Header Styles */
+header {
+  background: #333;
+  color: #fff;
+  padding-top: 10px;
+  min-height: 70px;
+  border-bottom: #4caf50 3px solid;
+}
+
+header a.logo {
   text-decoration: none;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #fff;
+  float: left;
+  padding: 10px;
 }
 
-nav a:hover {
-  color: #ddd;
+header a.logo img {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
 }
 
-#concert-grid{
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    gap: 10px;
+header nav {
+  float: right;
 }
+
+header nav ul {
+  list-style: none;
+  margin-top: 25px;
+}
+
+header nav ul li {
+  display: inline;
+  padding: 0 20px;
+}
+
+header nav ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 1.2rem;
+}
+
+/* Main Section Styles */
+section {
+  float: left;
+  width: 60%;
+  margin-top: 20px;
+}
+
+.event {
+  background: #fff;
+  margin-bottom: 20px;
+  padding: 10px;
+}
+
+.event img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.event .info {
+  padding: 10px;
+}
+
+.event .info span {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.event .info button {
+  background: #4caf50;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.event .info button:hover {
+  background: #45a049;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Concert Grid Styles */
+#concert-grid {
+  float: right;
+  width: 40%;
+}
+
 .concert-grid-item {
-    height: 300px;
-    width: 450px;
+  margin-bottom: 20px;
 }
-.concert-grid-item img{
-    width: 100%;
-    height: auto;
+
+.concert-grid-item img {
+  width: 100%;
+  height: auto;
 }

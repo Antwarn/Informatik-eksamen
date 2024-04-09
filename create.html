@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ticket Website</title>
+  <link rel="stylesheet" href="create.css">
+</head>
+<body>
+
+<div class="container">
+  <h1>Create an Event</h1>
+  <form id="event-form">
+    <label for="event-name">Event Name:</label>
+    <input type="text" id="event-name" name="event-name">
+
+    <label for="event-date">Event Date:</label>
+    <input type="date" id="event-date" name="event-date">
+
+    <label for="event-description">Event Description:</label>
+    <textarea id="event-description" name="event-description" rows="4" cols="50"></textarea>
+
+    <input type="submit" value="Create Event">
+  </form>
+
+  <div id="event-box"></div>
+</div>
+
+<script src="create.js"></script>
+
+</body>
+</html>

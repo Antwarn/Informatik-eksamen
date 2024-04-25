@@ -1,32 +1,41 @@
-const eventForm = document.getElementById("event-form");
-const eventContainer = document.getElementById("event-container");
+// Initialize Firebase
+const firebaseConfig = {
+  apiKey: "AIzaSyBUrJmBzktCOGaf86Ne0ORozD71xyPGVuM",
+  authDomain: "informa-c32b1.firebaseapp.com",
+  projectId: "informa-c32b1",
+  storageBucket: "informa-c32b1.appspot.com",
+  messagingSenderId: "107625684096",
+  appId: "1:107625684096:web:a93966cec62bfa81fa5a65"
+};
 
-eventForm.addEventListener("submit", (event) => {
-  event.preventDefault();
+firebase.initializeApp(firebaseConfig);
 
-  const eventName = document.getElementById("event-name").value;
-  const eventDate = document.getElementById("event-date").value;
-  const eventDescription = document.getElementById("event-description").value;
+// Get a reference to the database service
+const database = firebase.database();
 
-  const newEvent = {
-    name: eventName,
-    date: eventDate,
-    description: eventDescription
-  };
+document.getElementById("eventForm").addEventListener("submit", function(event) {
+  event.preventDefault(); // Prevent default form submission
 
-  displayEvent(newEvent);
+  // Get form values
+  const eventName = document.getElementById("eventName").value;
+  const eventDate = document.getElementById("eventDate").value;
+  const stageNr = document.getElementById("stageNr").value;
+  const eventDetails = document.getElementById("eventDetails").value;
+
+  // Push data to Firebase
+  database.ref("events").push({
+    eventName: eventName,
+    eventDate: eventDate,
+    stageNr: stageNr,
+    eventDetails: eventDetails
+  })
+  .then(() => {
+    alert("Event created successfully!");
+    // Optionally, reset the form after successful submission
+    document.getElementById("eventForm").reset();
+  })
+  .catch((error) => {
+    console.error("Error creating event: ", error);
+    alert("An error occurred while creating the event. Please try again.");
+  });
 });
-
-function displayEvent(event) {
-  const eventDiv = document.createElement("div");
-  eventDiv.classList.add("event");
-
-  const eventHtml = `
-    <h2>${event.name}</h2>
-    <p>Date: ${event.date}</p>
-    <p>Description: ${event.description}</p>
-  `;
-
-  eventDiv.innerHTML = eventHtml;
-  eventContainer.appendChild(eventDiv);
-}

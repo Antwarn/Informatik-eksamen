@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tilfældige Events</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Tilfældige Events</h1>
+  </header>
+
+  <main>
+    <div class="event-list">
+      <?php
+      // Array med scener og tilfældige events
+      $scenes = array(
+        "Lydloftet" => array(
+          "Rock koncert",
+          "Hip-hop show",
+          "Akustisk session"
+        ),
+        "Harmoni Hallen" => array(
+          "Jazz festival",
+          "Pop optræden",
+          "Klassisk koncert"
+        ),
+        "Lyric Lounge" => array(
+          "Stand-up comedy",
+          "Poesi aften",
+          "Open mic nat"
+        )
+      );
+
+      // Viser et tilfældigt event for hver scene
+      foreach ($scenes as $scene => $events) {
+        $random_event = $events[array_rand($events)];
+        echo "<div class='event'>";
+        echo "<h2>$scene</h2>";
+        echo "<p><strong>Event:</strong> $random_event</p>";
+        echo "</div>";
+      }
+      ?>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2024 Lydhavn. Alle rettigheder forbeholdes.</p>
+  </footer>
+</body>
+</html>

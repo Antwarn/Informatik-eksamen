@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Opret Event</title>
+  <link rel="stylesheet" href="create-event.css">
+</head>
+<body>
+  <header>
+    <h1>Opret Event</h1>
+  </header>
+
+  <main>
+    <form action="handler.php" method="post">
+      <div class="form-group">
+        <label for="scene">Vælg Scene:</label>
+        <select name="scene" id="scene">
+          <option value="Lydloftet">Lydloftet</option>
+          <option value="Harmoni Hallen">Harmoni Hallen</option>
+          <option value="Lyric Lounge">Lyric Lounge</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="datetime">Tid og Dato:</label>
+        <input type="datetime-local" id="datetime" name="datetime">
+      </div>
+
+      <div class="form-group">
+        <label for="artist">Kunsternavn:</label>
+        <input type="text" id="artist" name="artist">
+      </div>
+
+      <div class="form-group">
+        <label for="description">Beskrivelse:</label>
+        <textarea id="description" name="description" rows="4"></textarea>
+      </div>
+
+      <button type="submit">Opret Event</button>
+    </form>
+  </main>
+
+  <footer>
+    <p>&copy; 2024 Lydhavn. Alle rettigheder forbeholdes.</p>
+  </footer>
+</body>
+</html>

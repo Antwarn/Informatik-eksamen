@@ -1,0 +1,101 @@
+/* styles.css */
+/* Reset default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Style the form container */
+  .form {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  /* Style the tab group */
+  .tab-group {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20px 0;
+  }
+  
+  .tab-group .tab {
+    display: inline-block;
+    margin-right: 10px;
+  }
+  
+  .tab-group .tab a {
+    text-decoration: none;
+    color: #333;
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px 5px 0 0;
+    background: #f0f0f0;
+    font-family: Calibri, sans-serif; /* Add font-family */
+  }
+  
+  .tab-group .tab.active a {
+    background: #fff;
+  }
+  
+  .tab-content {
+    border: 1px solid #ccc;
+    border-radius: 0 5px 5px 5px;
+    padding: 20px;
+  }
+  
+  /* Hide tab content by default */
+  .tab-content > div {
+    display: none;
+  }
+  
+  /* Show active tab content */
+  .tab-content > div:target {
+    display: block;
+  }
+  
+  /* Style form fields */
+  .field-wrap {
+    margin-bottom: 20px;
+  }
+  
+  .field-wrap label {
+    display: block;
+    font-weight: bold;
+    font-family: Calibri, sans-serif; /* Add font-family */
+  }
+  
+  .field-wrap input[type="text"],
+  .field-wrap input[type="email"],
+  .field-wrap input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: Calibri, sans-serif; /* Add font-family */
+  }
+  
+  /* Style buttons */
+  .button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+    font-family: Calibri, sans-serif; /* Add font-family */
+  }
+  
+  .button:hover {
+    background-color: #45a049;
+  }
+  
+  .button-block {
+    width: auto;
+  }
+  

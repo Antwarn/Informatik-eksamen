@@ -1,3 +1,9 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 body {
     font-family: "Poppins", sans-serif;
     background-color: #f0f0f0;
@@ -23,8 +29,8 @@ body {
     height: 40px;
   }
   .container {
-    max-width: 800px;
-    margin: 0 auto;
+    max-width: 1000px;
+    margin: 100 auto;
     padding: 20px;
     overflow: hidden; /* Clear the float */
   }
@@ -41,8 +47,6 @@ body {
     padding: 20px;
     margin-bottom: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    float: left; /* Tilføjet float for at placere elementer ved siden af hinanden */
-    clear: none; /* Fjernet clear for at tillade elementerne at være ved siden af hinanden */
   }
   .concert img {
     width: 100%;

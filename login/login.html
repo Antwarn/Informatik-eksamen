@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webleb</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+        integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="login.css">
+</head>
+
+<body>
+    <div class="header">
+        <img src="../Pictures/lydhavnLogo.png" alt="Logo" class="logo">
+        <a href="../Hjem/hjem.html">Events</a>
+        <a href="../Create-event/create-event.html">Book event</a>
+        <a href="../login/login.html#login-form">Log in</a>
+        <a href="../login/login.html#">Opret bruger</a>
+    </div>
+    <div class="login-page">
+        <div class="form">
+            <form class="register-form" method="POST" id="signup-form">
+                <h2><i class="fas fa-lock"></i> Sign up</h2>
+                <input type="text" placeholder="Navn *" required/>
+                <input type="text" placeholder="Brugernavn *" required/>
+                <input type="email" placeholder="Email *" required/>
+                <input type="password" placeholder="Password *" required/>
+                <button type="submit">Signup</button>
+                <p class="message">Allerede bruger? <a href="#">Sign In</a></p>
+            </form>
+            <form class="login-form" method="post" id="login-form">
+                <h2><i class="fas fa-lock"></i> Login</h2>
+                <input type="text" placeholder="Brugernavn" required />
+                <input type="password" placeholder="Password" required/>
+                <button type="submit" name="send2">login</button>
+                <p class="message">Ikke registreret? <a href="#">Opret bruger</a></p>
+            </form>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>

@@ -1,48 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Opret Event</title>
-  <link rel="stylesheet" href="create-event.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Opret Event</title>
+    <link rel="stylesheet" href="create-event.css">
 </head>
 <body>
-  <header>
-    <h1>Opret Event</h1>
-  </header>
+  <div class="header">
+    <img src="../Pictures/lydhavnLogo.png" alt="Logo" class="logo">
+    <a href="../Hjem/hjem.html">Events</a>
+    <a href="../Create-event/create-event.html">Book event</a>
+    <a href="../login/login.html#login-form">Log in</a>
+    <a href="../login/login.html#">Opret bruger</a>
+  </div>
+  <h1>Opret Event</h1>  
+    <form action="#">
+        <label for="eventName">Navn:</label><br>
+        <input type="text" id="eventName" name="eventName" required><br><br>
 
-  <main>
-    <form action="handler.php" method="post">
-      <div class="form-group">
-        <label for="scene">Vælg Scene:</label>
-        <select name="scene" id="scene">
-          <option value="Lydloftet">Lydloftet</option>
-          <option value="Harmoni Hallen">Harmoni Hallen</option>
-          <option value="Lyric Lounge">Lyric Lounge</option>
-        </select>
-      </div>
+        <label for="eventDate">Dato:</label><br>
+        <input type="date" id="eventDate" name="eventDate" required><br><br>
 
-      <div class="form-group">
-        <label for="datetime">Tid og Dato:</label>
-        <input type="datetime-local" id="datetime" name="datetime">
-      </div>
+        <label for="eventTime">Tid:</label><br>
+        <input type="time" id="eventTime" name="eventTime" required><br><br>
 
-      <div class="form-group">
-        <label for="artist">Kunsternavn:</label>
-        <input type="text" id="artist" name="artist">
-      </div>
+        <label for="eventStage">Scene:</label><br>
+        <input type="text" id="eventStage" name="eventStage" required><br><br>
 
-      <div class="form-group">
-        <label for="description">Beskrivelse:</label>
-        <textarea id="description" name="description" rows="4"></textarea>
-      </div>
+        <label for="eventPrice">Pris:</label><br>
+        <input type="text" id="eventPrice" name="eventPrice" required><br><br>
 
-      <button type="submit">Opret Event</button>
+        <label for="eventDescription">Beskrivelse:</label><br>
+        <textarea id="eventDescription" name="eventDescription" rows="4" cols="50" required></textarea><br><br>
+
+        <input type="submit" value="Opret Event">
     </form>
-  </main>
-
-  <footer>
-    <p>&copy; 2024 Lydhavn. Alle rettigheder forbeholdes.</p>
-  </footer>
 </body>
 </html>

@@ -13,22 +13,22 @@ if ($conn->connect_error) {
     die("Forbindelse mislykkedes: " . $conn->connect_error);
 }
 
-// Hent events baseret på den angivne scene
+// Hent event baseret på den angivne scene
 if (isset($_GET['scene'])) {
     $scene = $_GET['scene'];
 
-    // Hent events for den angivne scene
-    $sql = "SELECT * FROM events WHERE scene = '$scene'";
+    // Hent event for den angivne scene
+    $sql = "SELECT * FROM event WHERE scene = '$scene'";
     $result = $conn->query($sql);
 
     // Returner JSON-data
-    $events = array();
+    $event = array();
     if ($result->num_rows > 0) {
         while ($row = $result->fetch_assoc()) {
-            $events[] = $row;
+            $event[] = $row;
         }
     }
-    echo json_encode($events);
+    echo json_encode($event);
 } else {
     echo "Ingen scene angivet.";
 }

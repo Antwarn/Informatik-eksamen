@@ -1,0 +1,51 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model customer {
+  CustomerID Int      @id
+  Name       String?  @db.VarChar(100)
+  Email      String?  @db.VarChar(100)
+  Phone      String?  @db.VarChar(20)
+  ticket     ticket[]
+}
+
+model event {
+  EventID Int       @id
+  Name    String?   @db.VarChar(100)
+  Date    DateTime? @db.Date
+  SceneID Int?
+  scene   scene?    @relation(fields: [SceneID], references: [SceneID], onDelete: Restrict, onUpdate: Restrict, map: "event_ibfk_1")
+  ticket  ticket[]
+
+  @@index([SceneID], map: "SceneID")
+}
+
+model scene {
+  SceneID  Int     @id
+  Name     String? @db.VarChar(100)
+  Location String? @db.VarChar(100)
+  event    event[]
+}
+
+model test {
+  id    Int    @id @default(autoincrement())
+  name  String @db.VarChar(255)
+  email String @db.VarChar(255)
+}
+
+model ticket {
+  TicketID   Int       @id
+  CustomerID Int?
+  EventID    Int?
+  customer   customer? @relation(fields: [CustomerID], references: [CustomerID], onDelete: Restrict, onUpdate: Restrict, map: "ticket_ibfk_1")
+  event      event?    @relation(fields: [EventID], references: [EventID], onDelete: Restrict, onUpdate: Restrict, map: "ticket_ibfk_2")
+
+  @@index([CustomerID], map: "CustomerID")
+  @@index([EventID], map: "EventID")
+}
